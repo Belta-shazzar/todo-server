@@ -18,10 +18,11 @@ type Query {
 }
 
 type Mutation {
-  registerUser(registerData: RegistrationDto!): AuthResponseDto!
+  registerUser(registerData: AuthenticationDto!): AuthResponseDto!
+  login(loginData: AuthenticationDto!): AuthResponseDto!
 }
 
-input RegistrationDto {
+input AuthenticationDto {
   userName: String!
   password: String!
 }
