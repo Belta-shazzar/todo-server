@@ -2,11 +2,26 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type User {
+type UserType {
   userName: String!
   password: String!
+  _id: ID!
+}
+
+type AuthResponseDto {
+  user: UserType!
+  accessToken: String!
 }
 
 type Query {
-  getMe(id: String!): User
+  getMe(id: String!): UserType
+}
+
+type Mutation {
+  registerUser(registerData: RegistrationDto!): AuthResponseDto!
+}
+
+input RegistrationDto {
+  userName: String!
+  password: String!
 }
