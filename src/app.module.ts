@@ -26,6 +26,7 @@ import { JwtService } from '@nestjs/jwt';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'src/schema.gql',
+      context: ({ req }) => ({ req }),
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],

@@ -11,6 +11,10 @@ export class UserService {
     return this.userModel.findOne({ userName });
   }
 
+  async findById(id: string) {
+    return this.userModel.findById(id);
+  }
+
   async createUser(data: Partial<User>) {
     return this.userModel.create(data);
   }
